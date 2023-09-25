@@ -1,11 +1,12 @@
 import { SortOrder } from 'mongoose'
 import ApiError from '../../../errors/ApiError'
-import { paginationHelpers } from '../../../helper/paginationHelper'
+
 import { IGenericResponse } from '../../../interfaces/common'
 import { IPaginationOptions } from '../../../interfaces/pagination'
 import { CowSearchableFields } from './cow.constant'
 import { ICow, ICowsFilters } from './cow.interface'
 import { Cow } from './cow.model'
+import { paginationHelpers } from '../../../helpers/paginationHelper'
 
 const createCow = async (cow: ICow): Promise<ICow | null> => {
   const createCow = await Cow.create(cow)
@@ -17,7 +18,7 @@ const createCow = async (cow: ICow): Promise<ICow | null> => {
 
 const getAllCows = async (
   filters: ICowsFilters,
-  paginationOptions: IPaginationOptions
+  paginationOptions: IPaginationOptions,
 ): Promise<IGenericResponse<ICow[]>> => {
   const { searchTerm, ...filtersData } = filters
   const { page, limit, skip, sortBy, sortOrder } =
@@ -77,7 +78,7 @@ const getSingleCow = async (id: string): Promise<ICow | null> => {
 
 const updateCow = async (
   id: string,
-  payload: Partial<ICow>
+  payload: Partial<ICow>,
 ): Promise<ICow | null> => {
   const result = await Cow.findOneAndUpdate({ _id: id }, payload, {
     new: true,

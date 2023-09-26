@@ -19,7 +19,6 @@ const createUser: RequestHandler = catchAsync(
       })
     } catch (error: any) {
       if (error.code === 11000) {
-        // MongoDB duplicate key error
         throw new ApiError(500, 'Phone Number already exist')
       }
     }

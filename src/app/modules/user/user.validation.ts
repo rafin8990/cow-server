@@ -1,6 +1,5 @@
 import { z } from 'zod'
 import { UserRole } from './user.constant'
-
 const createUserZodSchema = z.object({
   body: z.object({
     phoneNumber: z.string({
@@ -9,7 +8,9 @@ const createUserZodSchema = z.object({
     role: z.enum([...UserRole] as [string, ...string[]], {
       required_error: 'role is required',
     }),
-    password: z.string().optional(),
+    password: z.string({
+      required_error: 'password is required',
+    }),
     name: z.object({
       firstName: z.string({
         required_error: 'First name is required',
@@ -21,12 +22,8 @@ const createUserZodSchema = z.object({
     address: z.string({
       required_error: 'address is required',
     }),
-    budget: z.number({
-      required_error: 'budget is required',
-    }),
-    income: z.number({
-      required_error: 'income is required',
-    }),
+    budget: z.number().optional(),
+    income: z.number().optional(),
   }),
 })
 
@@ -38,7 +35,9 @@ const updateUserZodSchema = z.object({
     role: z.enum([...UserRole] as [string, ...string[]], {
       required_error: 'role is required',
     }),
-    password: z.string().optional(),
+    password: z.string({
+      required_error: 'password is required',
+    }),
     name: z.object({
       firstName: z.string({
         required_error: 'First name is required',

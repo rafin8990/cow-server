@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-this-alias */
-
 import { Schema, model } from 'mongoose'
-import { IUser, IUserMethods, UserModel } from './user.interface'
+import { IUser, UserModel } from './user.interface'
 
-const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
+const userSchema = new Schema<IUser, Record<string, unknown>>(
   {
     phoneNumber: {
       type: String,
@@ -40,14 +38,9 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
     income: {
       type: Number,
     },
-    needsPasswordChange: {
-      type: Boolean,
-      default: true,
-    },
   },
   {
     timestamps: true,
   },
 )
-
 export const User = model<IUser, UserModel>('User', userSchema)

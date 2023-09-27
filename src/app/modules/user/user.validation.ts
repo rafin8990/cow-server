@@ -20,7 +20,7 @@ const createUserZodSchema = z.object({
       }),
     }),
     address: z.string({
-      required_error: 'address is required',
+      required_error: 'address is obviously required',
     }),
     budget: z.number().optional(),
     income: z.number().optional(),

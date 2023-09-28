@@ -1,4 +1,4 @@
-import express from 'express'
+/* import express from 'express'
 
 import cowRoute from '../modules/cow/cow.route'
 import OrderRoute from '../modules/order/order.route'
@@ -25,3 +25,4 @@ const moduleRoutes = [
 ]
 moduleRoutes.forEach(route => router.use(route.path, route.route))
 export default router
+ */

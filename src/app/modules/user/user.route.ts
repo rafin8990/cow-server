@@ -9,4 +9,13 @@ router.post(
   validateRequest(UserValidation.createUserZodSchema),
   userController.createUser,
 )
+
+router.patch(
+  '/:id',
+  validateRequest(UserValidation.updateUserZodSchema),
+  userController.updateUser,
+)
+router.get('/', userController.getAllUsers)
+router.get('/:id', userController.getSingleUser)
+router.delete('/:id', userController.deleteUser)
 export default router

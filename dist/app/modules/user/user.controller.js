@@ -23,31 +23,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserController = void 0;
-const http_status_1 = __importDefault(require("http-status"));
-const ApiError_1 = __importDefault(require("../../../errors/ApiError"));
+exports.userController = void 0;
 const catchAsync_1 = __importDefault(require("../../../shared/catchAsync"));
-const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
+const ApiError_1 = __importDefault(require("../../../errors/ApiError"));
 const user_service_1 = require("./user.service");
+const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
+const http_status_1 = __importDefault(require("http-status"));
 const createUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const user = __rest(req.body, []);
-        const result = yield user_service_1.UsersService.createUser(user);
+        console.log(user);
+        const result = yield user_service_1.userService.createUser(user);
         res.status(200).json({
             success: true,
-            message: 'user create successfully',
+            message: 'user created successfully',
             data: result,
         });
     }
     catch (error) {
         if (error.code === 11000) {
-            // MongoDB duplicate key error
-            throw new ApiError_1.default(500, 'Phone Number already exist');
+            throw new ApiError_1.default(500, 'Phone number already exist');
         }
     }
 }));
 const getAllUsers = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield user_service_1.UsersService.getAllUsers();
+    const result = yield user_service_1.userService.getAllUsers();
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
@@ -57,7 +57,7 @@ const getAllUsers = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
 }));
 const getSingleUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = req.params.id;
-    const result = yield user_service_1.UsersService.getSingleUser(id);
+    const result = yield user_service_1.userService.getSingleUser(id);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
@@ -68,7 +68,7 @@ const getSingleUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, 
 const updateUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = req.params.id;
     const updatedData = req.body;
-    const result = yield user_service_1.UsersService.updateUser(id, updatedData);
+    const result = yield user_service_1.userService.updateUser(id, updatedData);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
@@ -78,7 +78,7 @@ const updateUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
 }));
 const deleteUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = req.params.id;
-    const result = yield user_service_1.UsersService.deleteUser(id);
+    const result = yield user_service_1.userService.deleteUser(id);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
@@ -86,7 +86,7 @@ const deleteUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
         data: result,
     });
 }));
-exports.UserController = {
+exports.userController = {
     createUser,
     getAllUsers,
     getSingleUser,

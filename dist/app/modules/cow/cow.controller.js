@@ -36,7 +36,7 @@ const createCow = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void
     const result = yield cow_service_1.CowService.createCow(cow);
     res.status(200).json({
         success: true,
-        message: 'user create successfully',
+        message: 'Cow create successfully',
         data: result,
     });
 }));

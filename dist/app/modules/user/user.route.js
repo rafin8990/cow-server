@@ -9,4 +9,8 @@ const user_validation_1 = require("./user.validation");
 const user_controller_1 = require("./user.controller");
 const router = express_1.default.Router();
 router.post('/signup', (0, validateRequest_1.default)(user_validation_1.UserValidation.createUserZodSchema), user_controller_1.userController.createUser);
+router.patch('/:id', (0, validateRequest_1.default)(user_validation_1.UserValidation.updateUserZodSchema), user_controller_1.userController.updateUser);
+router.get('/', user_controller_1.userController.getAllUsers);
+router.get('/:id', user_controller_1.userController.getSingleUser);
+router.delete('/:id', user_controller_1.userController.deleteUser);
 exports.default = router;

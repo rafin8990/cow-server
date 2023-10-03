@@ -15,7 +15,7 @@ error message type:
 
 users-->
 
-\*\*\* https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/auth/signup --> create a new user :
+\*\*\* https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/auth/signup --> create a new user :
 example :
 
 {
@@ -31,34 +31,34 @@ example :
 "income":0
 }
 
-\*\*\* https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/users/--> get all user
-\*\*\* https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/users?searchTerm=--> get all user
-\*\*\* https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/users/:id--> get single
+\*\*\* https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/users/--> get all user
+\*\*\* https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/users?searchTerm=--> get all user
+\*\*\* https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/users/:id--> get single
 user
-\*\*\* https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/users/:id-->Delete a user
-\*\*\* https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/users/:id-->update a user
+\*\*\* https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/users/:id-->Delete a user
+\*\*\* https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/users/:id-->update a user
 
 Cows-->
 
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows (POST)
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows (GET)
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/:id (Single GET) Include an id that is saved in your database
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/:id (PATCH)
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/:id (DELETE) Include an id that is saved in your database
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows (POST)
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows (GET)
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows/:id (Single GET) Include an id that is saved in your database
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows/:id (PATCH)
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows/:id (DELETE) Include an id that is saved in your database
 
 Pagination and Filtering routes of Cows
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows?pag=1&limit=10
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows?sortBy=price&sortOrder=asc
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows?location=Chattogram
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows?searchTerm=Cha
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows?pag=1&limit=10
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows?sortBy=price&sortOrder=asc
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows?location=Chattogram
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/cows?searchTerm=Cha
 
 order-->
 
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/orders (POST)
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/orders (POST)
 
 {
 "cow":"651667159ed4d29e7295299d",
 "buyer":"651665aa9ed4d29e72952991"
 }
 
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/orders (GET)
+https://cow-server-h43ueknwf-rafin8990.vercel.app/api/v1/orders (GET)

@@ -1,5 +1,7 @@
 This is a Digital cow server website backend where a user can create his account , sell a cow or buy a cow . The api details given into the bellow:-->
 
+Live Link: https://cow-server-h43ueknwf-rafin8990.vercel.app/
+
 error message type:
 {
 "success": false,

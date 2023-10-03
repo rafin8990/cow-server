@@ -42,9 +42,9 @@ user
 
 https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows (POST)
 https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows (GET)
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/6177a5b87d32123f08d2f5d4 (Single GET) Include an id that is saved in your database
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/6177a5b87d32123f08d2f5d4 (PATCH)
-https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/6177a5b87d32123f08d2f5d4 (DELETE) Include an id that is saved in your database
+https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/:id (Single GET) Include an id that is saved in your database
+https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/:id (PATCH)
+https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows/:id (DELETE) Include an id that is saved in your database
 
 Pagination and Filtering routes of Cows
 https://cow-server-dt2nndt5s-rafin8990.vercel.app/api/v1/cows?pag=1&limit=10
